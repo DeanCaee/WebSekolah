@@ -105,6 +105,7 @@ class ProductsController extends Controller
      */
     public function destroy($id)
     {
-        //
+    Products::where('products_id',$id)->delete();
+    return redirect()->route('products.index');
     }
 }
