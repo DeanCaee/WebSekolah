@@ -1,6 +1,7 @@
 <?php
 use App\Http\Controllers\CategoriesController;
 use App\Http\Controllers\CustomersController;
+use App\Http\Controllers\ProductsController;
 use Illuminate\Support\Facades\Route;
 
 /*    
@@ -24,6 +25,7 @@ Route::post('/categories',[CategoriesController::class,'store'])->name('categori
 Route::get('/categories/{id}/edit',[CategoriesController::class,'edit'])->name('categories.edit');
 Route::put('/categories/{id}/update',[CategoriesController::class,'update'])->name('categories.update');
 Route::delete('/categories/{id}',[CategoriesController::class,'destroy'])->name('categories.destroy');
+
 //crud customers
 Route::get('/customers',[CustomersController::class,'index'])->name('customers.index');
 Route::get('/customers/create',[CustomersController::class,'create'])->name('customers.create');
@@ -31,3 +33,11 @@ Route::post('/customers',[CustomersController::class,'store'])->name('customers.
 Route::get('/customers/{id}/edit',[CustomersController::class,'edit'])->name('customers.edit');
 Route::put('/customers/{id}/update',[CustomersController::class,'update'])->name('customers.update');
 Route::delete('/customers/{id}',[CustomersController::class,'destroy'])->name('customers.destroy');
+
+//crud products
+Route::get('/products',[ProductsController::class,'index'])->name('products.index');
+Route::get('/products/create',[ProductsController::class,'create'])->name('products.create');
+Route::post('/products',[ProductsController::class,'store'])->name('products.store');
+Route::get('/products/{id}/edit',[ProductsController::class,'edit'])->name('products.edit');
+Route::put('/products/{id}/update',[ProductsController::class,'update'])->name('products.update');
+Route::delete('/products/{id}',[ProductsController::class,'destroy'])->name('products.destroy');
