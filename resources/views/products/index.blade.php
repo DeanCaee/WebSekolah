@@ -28,8 +28,13 @@
             <td>{{$v->categories_id}}</td>
             <td>{{$v->products_price}}</td>
             <td>{{$v->products_stock}}</td>
-            <td>{{$v->products_image}}</td>
-            <td>{{$v->products_status}}</td>
+<td>
+    @if (!empty($v->products_image))
+        <img src="{{ asset('storage/' . $v->products_image) }}" width="80px" height="80px" style="object-fit: cover;">
+    @else
+        <span>Tidak ada foto</span>
+    @endif
+</td>            <td>{{$v->products_status}}</td>
             <td>
                 <form action="{{route('products.destroy',$v->products_id)}}" method="post" style="display:inline">
                     @csrf

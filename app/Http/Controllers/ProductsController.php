@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 use App\Products;
 use App\Categories;
@@ -48,7 +48,7 @@ class ProductsController extends Controller
         ]);
         $image = null;
         if ($request->hasFile('products_image')) {
-            $image = $request->file('products_image')->store('products');
+            $image = $request->file('products_image')->store('products','public');
         }
         Products::create([
             'products_name' => $request->products_name,
@@ -82,7 +82,9 @@ class ProductsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $dataeditproducts = Products::FindOrFail($id);
+        $dataeditcategories = Categories::all();
+        return view('products.edit',compact('dataeditproducts','dataeditcategories'));
     }
 
     /**
@@ -93,9 +95,46 @@ class ProductsController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
-    {
-        //
+{
+    $request->validate([
+        'products_name' => 'required',
+        'categories_id' => 'required',
+        'products_price' => 'required|numeric',
+        'products_stock' => 'required|numeric',
+        'products_description' => 'required',
+        'products_image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2040',
+        'products_status' => 'required|in:available,unavailable',
+    ]);
+
+    
+    $product = Products::findOrFail($id);
+    $image = $product->products_image;
+
+    // 4. Cek apakah ada file gambar baru yang di-upload
+    if ($request->hasFile('products_image')) {
+        // Hapus gambar lama jika ada di storage
+        if ($image && Storage::disk('public')->exists($image)) {
+            Storage::disk('public')->delete($image);
+        }
+
+        // Simpan gambar baru ke folder 'products' di disk 'public'
+        $image = $request->file('products_image')->store('products', 'public');
     }
+
+    // 5. Update data ke database
+    $product->update([
+        'products_name' => $request->products_name,
+        'categories_id' => $request->categories_id,
+        'products_price' => $request->products_price,
+        'products_stock' => $request->products_stock,
+        'products_description' => $request->products_description,
+        'products_image' => $image,
+        'products_status' => $request->products_status,
+    ]);
+
+    // 6. Redirect kembali ke halaman index produk
+    return redirect()->route('products.index')->with('success', 'Product updated successfully.');
+}
 
     /**
      * Remove the specified resource from storage.
