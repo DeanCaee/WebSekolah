@@ -25,7 +25,7 @@
         <tr>
             <td>{{$loop->iteration}}</td>
             <td>{{$v->products_name}}</td>
-            <td>{{$v->categories_id}}</td>
+            <td>{{$v->categories->categories_name}}</td>
             <td>{{$v->products_price}}</td>
             <td>{{$v->products_stock}}</td>
 <td>

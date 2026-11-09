@@ -110,14 +110,10 @@ class ProductsController extends Controller
     $product = Products::findOrFail($id);
     $image = $product->products_image;
 
-    // 4. Cek apakah ada file gambar baru yang di-upload
     if ($request->hasFile('products_image')) {
-        // Hapus gambar lama jika ada di storage
         if ($image && Storage::disk('public')->exists($image)) {
             Storage::disk('public')->delete($image);
         }
-
-        // Simpan gambar baru ke folder 'products' di disk 'public'
         $image = $request->file('products_image')->store('products', 'public');
     }
 
