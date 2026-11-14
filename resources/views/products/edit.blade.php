@@ -1,3 +1,7 @@
+<head>
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+</head>
+<body>
 <h3>Form Faisal</h3>
 <form action="{{ route('products.update', $dataeditproducts->products_id) }}" method="POST" enctype="multipart/form-data">
     @csrf
@@ -19,7 +23,7 @@
                     @endforeach
                 </select>
             </td>
-        </tr> 
+        </tr>
         <tr>
             <td><label>Products Price:</label></td>
             <td colspan="2"><input type="number" name="products_price" value="{{ $dataeditproducts->products_price }}"></td>
@@ -33,9 +37,9 @@
             <td colspan="2">
                 <input type="file" name="products_image">
                 @if (!empty($dataeditproducts->products_image))
-                <p class="mt-2">    
+                <p class="mt-2">
                     <img src="{{ asset('storage/' . $dataeditproducts->products_image) }}" width="100px" height="100px">
-                </p>    
+                </p>
                 @endif
             </td>
         </tr>
@@ -54,3 +58,4 @@
         </tr>
     </table>
 </form>
+</body>

@@ -1,15 +1,19 @@
+@extends('layout.app')
+
+@section('content')
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Customers</title>
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 </head>
 <body>
     <h3>View Customers</h3>
     <table border=1 cellpadding=10 cellspacing=0 >
         <thead>
-            <tr style="background-color: yellow;">
+            <tr>
                 <th>Customers Id</th>
                 <th>Customers Name</th>
                 <th>Customers Email</th>
@@ -35,7 +39,7 @@
                     <a href="{{route ('customers.edit',$v->customers_id)}}"><b style="color: green;">EDIT</b></a></td>
                     <td ><button style='background-color: red;' type="submit" onclick="return confirm('Yakin Menghapus Data?')"><b>DELETE</b></button>
                 </form>
-            </td>   
+            </td>
         </tr>
         @endforeach
         <tr>
@@ -44,3 +48,4 @@
         </tbody>
 </body>
 </html>
+@endsection

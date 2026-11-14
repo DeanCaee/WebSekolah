@@ -1,4 +1,8 @@
-<h3>Form Categories</h3>
+<head>
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+</head>
+<body>
+    <h3>Form Categories</h3>
 <form action="{{route('categories.update', $dataeditcategories->categories_id)}}" method="POST">
     @csrf
     @method("PUT")
@@ -17,3 +21,4 @@
         </tr>
     </table>
 </form>
+</body>

@@ -1,3 +1,7 @@
+<head>
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+</head>
+<body>
 <h3>Form Categories</h3>
 <form action="{{route('categories.store')}}" method="post">
     @csrf
@@ -16,3 +20,4 @@
         </tr>
     </table>
 </form>
+</body>

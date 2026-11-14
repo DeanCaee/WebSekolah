@@ -1,4 +1,8 @@
-<h3>Form Faisal</h3>
+<head>
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+</head>
+<body>
+<h3>Form Products</h3>
 <form action="{{route('products.store')}}" method="post" enctype="multipart/form-data">
     @csrf
     <table border=1 cellpadding=10 cellspacing=0>
@@ -44,3 +48,4 @@
         </tr>
     </table>
 </form>
+</body>

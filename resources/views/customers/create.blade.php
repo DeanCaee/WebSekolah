@@ -1,3 +1,7 @@
+<head>
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+</head>
+<body>
 <h3>Form Customers</h3>
 <form action="{{route('customers.store')}}" method="post">
     @csrf
@@ -29,3 +33,4 @@
         </tr>
     </table>
 </form>
+</body>
