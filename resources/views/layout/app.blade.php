@@ -7,11 +7,8 @@
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 </head>
 <body>
-
-    <!-- HEADER OTOMATIS -->
     <header>
         <h2>Aplikasi Pendataan Web Sekolah</h2>
-        <!-- Tombol Navigasi Global di Header (Opsional) -->
         <nav style="margin-top: 10px;">
             <a href="{{ route('products.index') }}">Products</a>
             <a href="{{ route('categories.index') }}">Categories</a>
@@ -26,7 +23,7 @@
 
     <!-- FOOTER OTOMATIS -->
     <footer>
-        <p>&copy; 2026 Web Sekolah. All rights reserved.</p>
+        <p>&copy; 2026 Web POS. All rights reserved.</p>
     </footer>
 
 </body>

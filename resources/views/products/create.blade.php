@@ -40,7 +40,7 @@
         <tr>
             <td><label>products status:</label></td>
             <td><input type="radio" name="products_status" value="available" >Available</td>
-            <td><input type="radio" name="products_status" value="unavailable">Unavailable</td>
+            <td><input type="radio" name="products_status" value="unvailable">Unavailable</td>
         </tr>
         <tr>
     <td style="text-align: center;"><button type="submit">Submit</button></td>

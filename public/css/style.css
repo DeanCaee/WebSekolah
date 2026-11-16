@@ -45,3 +45,9 @@ body{
     background-color: #F8FAFC;
     font-family: Arial, sans-serif;
 }
+tr {
+    background-color: #F3F4F6;
+}
+a {
+    text-decoration: none;
+}

@@ -2,6 +2,7 @@
 use App\Http\Controllers\CategoriesController;
 use App\Http\Controllers\CustomersController;
 use App\Http\Controllers\ProductsController;
+use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Route;
 
 /*    
@@ -41,3 +42,11 @@ Route::post('/products',[ProductsController::class,'store'])->name('products.sto
 Route::get('/products/{id}/edit',[ProductsController::class,'edit'])->name('products.edit');
 Route::put('/products/{id}/update',[ProductsController::class,'update'])->name('products.update');
 Route::delete('/products/{id}',[ProductsController::class,'destroy'])->name('products.destroy');
+
+//crud users
+Route::get('/users',[UsersController::class,'index'])->name('users.index');
+Route::get('/users/create',[UsersController::class,'create'])->name('users.create');
+Route::post('/users',[UsersController::class,'store'])->name('users.store');
+Route::get('/users/{id}/edit',[UsersController::class,'edit'])->name('users.edit');
+Route::put('/users/{id}/update',[UsersController::class,'update'])->name('users.update');
+Route::delete('/users/{id}',[UsersController::class,'destroy'])->name('users.destroy');

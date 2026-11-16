@@ -44,7 +44,7 @@ class ProductsController extends Controller
             'products_stock' => 'required',
             'products_description' => 'required',
             'products_image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2040',
-            'products_status' => 'required|in:available,unavailable',
+            'products_status' => 'required|in:available,unvailable',
         ]);
         $image = null;
         if ($request->hasFile('products_image')) {
@@ -103,7 +103,7 @@ class ProductsController extends Controller
         'products_stock' => 'required|numeric',
         'products_description' => 'required',
         'products_image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2040',
-        'products_status' => 'required|in:available,unavailable',
+        'products_status' => 'required|in:available,unvailable',
     ]);
 
     

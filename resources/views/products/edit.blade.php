@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <head>
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 </head>
@@ -50,7 +51,7 @@
         <tr>
             <td><label>Products Status:</label></td>
             <td><input type="radio" name="products_status" value="available" {{ $dataeditproducts->products_status == 'available' ? 'checked' : '' }}> Available</td>
-            <td><input type="radio" name="products_status" value="unavailable" {{ $dataeditproducts->products_status == 'unavailable' ? 'checked' : '' }}> Unavailable</td>
+            <td><input type="radio" name="products_status" value="unvailable" {{ $dataeditproducts->products_status == 'unvailable' ? 'checked' : '' }}> Unvailable</td>
         </tr>
         <tr>
             <td style="text-align: center;"><button type="submit">Submit</button></td>

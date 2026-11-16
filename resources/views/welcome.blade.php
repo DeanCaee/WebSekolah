@@ -81,7 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    TOKO PAISAL
                 </div>
 
                 <div class="links">

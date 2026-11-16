@@ -1,6 +1,3 @@
-@extends('layout.app')
-
-@section('content')
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,7 +17,7 @@
                 <th colspan='2'>Action</th>
             </tr>
         </thead>
-        <tbody style=" background-color: lightblue;">
+        <tbody>
         @foreach ($datacategories as $v)
         <tr>
             <td>{{$loop->iteration}}</td>
@@ -42,4 +39,3 @@
         </tbody>
 </body>
 </html>
-@endsection

@@ -1,6 +1,3 @@
-@extends('layout.app')
-
-@section('content')
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -50,9 +47,8 @@
         </tr>
         @endforeach
         <tr>
-            <td colspan="9" style="text-align: center; background-color: lightblue;"><a href="{{ route ('products.create') }}">Create</a></td>
+            <td colspan="9" style="text-align: center;"><a href="{{ route ('products.create') }}">Create</a></td>
         </tr>
         </tbody>
 </body>
 </html>
-@endsection
