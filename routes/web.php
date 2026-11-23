@@ -3,6 +3,7 @@ use App\Http\Controllers\CategoriesController;
 use App\Http\Controllers\CustomersController;
 use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\UsersController;
+use App\Http\Controllers\TransactionController;
 use Illuminate\Support\Facades\Route;
 
 /*    
@@ -50,3 +51,11 @@ Route::post('/users',[UsersController::class,'store'])->name('users.store');
 Route::get('/users/{id}/edit',[UsersController::class,'edit'])->name('users.edit');
 Route::put('/users/{id}/update',[UsersController::class,'update'])->name('users.update');
 Route::delete('/users/{id}',[UsersController::class,'destroy'])->name('users.destroy');
+
+//crud transaction
+Route::get('/transactions',[TransactionController::class,'index'])->name('transactions.index');
+Route::get('/transactions/create',[TransactionController::class,'create'])->name('transactions.create');
+Route::post('/transactions',[TransactionController::class,'store'])->name('transactions.store');
+Route::get('/transactions/{id}/edit',[TransactionController::class,'edit'])->name('transactions.edit');
+Route::put('/transactions/{id}/update',[TransactionController::class,'update'])->name('transactions.update');
+Route::delete('/transactions/{id}',[TransactionController::class,'destroy'])->name('transactions.destroy');
