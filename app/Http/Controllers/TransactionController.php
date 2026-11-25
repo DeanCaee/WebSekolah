@@ -16,7 +16,8 @@ class TransactionController extends Controller
      */
     public function index()
     {
-        
+        $datatransactions = Transactions::with('customers','users')->get();
+        return view('transactions.index',compact('datatransactions'));
     }
 
     /**

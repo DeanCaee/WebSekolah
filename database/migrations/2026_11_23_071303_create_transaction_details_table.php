@@ -14,7 +14,12 @@ class CreateTransactionDetailsTable extends Migration
     public function up()
     {
         Schema::create('transaction_details', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('transaction_details_id');
+            $table->foreignId('transactions_id')->references('transactions_id')->on('transactions');
+            $table->foreignId('products_id')->references('products_id')->on('products');
+            $table->integer('quantity');
+            $table->decimal('price', 15, 2);
+            $table->decimal('subtotal', 15, 2);
             $table->timestamps();
         });
     }

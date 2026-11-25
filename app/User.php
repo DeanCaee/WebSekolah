@@ -5,7 +5,7 @@ namespace App;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-
+use App\Transactions;
 class User extends Authenticatable
 {
     use Notifiable;
@@ -39,6 +39,6 @@ class User extends Authenticatable
     ];
     public function transactions()
     {
-        return $this->hasMany(Transactions::class, 'transactions_id');
+        return $this->hasMany(Transactions::class, 'users_id');
     }
 }

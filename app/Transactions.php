@@ -24,17 +24,16 @@ protected $fillable = [
 // Relasi ke Customer
 public function customer()
 {
-return $this->belongsTo(Customers::class, 'customers_id', 'customers_id');
+return $this->belongsTo(Customers::class, 'customers_id');
 }
 // Relasi ke User (kasir/admin)
 public function user()
 {
-return $this->belongsTo(User::class, 'users_id', 'users_id');
+return $this->belongsTo(User::class, 'users_id');
 }
 // Relasi ke Transaction Details
-public function details()
+public function transaction_details()
 {
-return $this->hasMany(TransactionDetail::class, 'transaction_id',
-'transaction_id');
+return $this->hasMany(TransactionDetail::class, 'transactions_id');
 }
 }

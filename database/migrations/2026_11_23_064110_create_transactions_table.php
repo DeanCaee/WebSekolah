@@ -16,8 +16,8 @@ class CreateTransactionsTable extends Migration
         Schema::create('transactions', function (Blueprint $table) {
             $table->bigIncrements('transactions_id');
             $table->string('transactions_code');
-            $table->foreignId('customer_id')->references('customers_id')->on('customers');
-            $table->foreignId('user_id')->references('users_id')->on('users');
+            $table->foreignId('customers_id')->references('customers_id')->on('customers');
+            $table->foreignId('users_id')->references('users_id')->on('users');
             $table->decimal('total_amount', 15, 2);
             $table->decimal('paid_amount', 15, 2);
             $table->decimal('change_amount', 15, 2);

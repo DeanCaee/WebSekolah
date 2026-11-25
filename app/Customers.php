@@ -3,7 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-
+use App\Transactions;
 class Customers extends Model
 {
     protected $table = 'customers';
@@ -14,4 +14,8 @@ class Customers extends Model
     protected $casts = [
         'member_status' => 'boolean'
     ];
+    public function transactions()
+    {
+        return $this->hasMany(Transactions::class, 'customers_id');
+    }
 }
